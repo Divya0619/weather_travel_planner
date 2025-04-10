@@ -10,10 +10,11 @@ import requests
 def get_db_connection():
     """Creates a new MySQL connection."""
     return mysql.connector.connect(
-        host="localhost",
+        host="mainline.proxy.rlwy.net",
+        port=50983,
         user="root",
-        password="06193/4", 
-        database="weather_database"
+        password="qyJbPZfbLgqsGdzrrXTABGFPfIxsgwVN", 
+        database="railway"
     )
 @app.route('/')
 def index():
