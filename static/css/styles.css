@@ -30,26 +30,15 @@ body {
 }
 .nav .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 75%;
     padding: 0 20px;
 }
-.external-links a {
-    color: rgb(184, 183, 183);
-    font-size: 20px;
-    text-decoration: none;
-    padding: 10px;
-    transition: color 0.3s ease;
-}
 
-.external-links a:hover {
-    color: white;
-}
-/* Container for navigation links */
 .container {
     display: flex;
-    gap: 20px; /* Space between links */
+    gap: 20px; 
 }
 
 /* Styling for links */
