@@ -5,7 +5,6 @@ import mysql.connector
 app = Flask(__name__) 
 
 API_KEY = "a9b49f91afa3434d90a93038251903" 
-import requests
 
 def get_db_connection():
     """Creates a new MySQL connection."""
