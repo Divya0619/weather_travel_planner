@@ -207,5 +207,5 @@ def get_cities_by_temp():
 def Articles():
     return render_template("Articles.html")
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(host='0.0.0.0',port=5000)
     
