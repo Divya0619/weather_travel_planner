@@ -18,6 +18,7 @@ def get_db_connection():
 @app.route('/')
 def index():
     return render_template('index.html')
+
 @app.route('/cool_places')
 def cool_places():
     db = get_db_connection()
@@ -39,6 +40,7 @@ LIMIT 20;
     db.close()
 
     return render_template('cool_hot_results.html', title="Cool Places", cities=cool_cities)
+
 @app.route('/hot_places')
 def hot_places():
     db = get_db_connection()
@@ -60,6 +62,7 @@ LIMIT 20;
     db.close()
 
     return render_template('cool_hot_results.html', title="Hot Places", cities=hot_cities)
+
 @app.route('/best_time')
 def best_time():
     db = get_db_connection()
@@ -72,9 +75,10 @@ def best_time():
     db.close()
 
     return render_template("best_time.html", countries=results, title="Best Time to Visit Each Country")
+
 @app.route('/travel_advice')
 def travel_advice():
-    country = request.args.get('country')
+    country = request.args.get('country') 
 
     db = get_db_connection()
     cursor = db.cursor()
@@ -156,7 +160,7 @@ def get_weather():
         cursor.close()
         db.close()
         return render_template('get_weather.html', weather_data=None, error="City not found.", top_cities=top_cities)
-
+    
 @app.route('/get_cities_by_temp', methods=['GET'])
 def get_cities_by_temp():
     month = request.args.get('month')              # e.g. "Jan"
@@ -212,9 +216,28 @@ def get_cities_by_temp():
         continent=continent,
         good_aqi=good_aqi
     )
+
+
 @app.route('/Articles', methods=['GET'])
 def Articles():
     return render_template("Articles.html")
+
+
+@app.route('/summer', methods=['GET'])
+def summer():
+    return render_template("summer.html")
+
+@app.route('/goa', methods=['GET'])
+def goa():
+    return render_template("goa.html")
+
+@app.route('/travelling', methods=['GET'])
+def travelling():
+    return render_template("joy_of_travelling.html")
+
+
+    
+  
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=5000)
     
