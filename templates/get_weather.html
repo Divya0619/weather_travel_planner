@@ -69,6 +69,32 @@
     {% elif city %}
         <p>No weather data found for "{{ city }}".</p>
     {% endif %}
+    {% if top_cities %}
+    <h2>Top 5 Most Searched Cities</h2>
+    <table border="1" style="background-color: rgba(255, 255, 255, 0.85); border-collapse: collapse; padding: 10px;">
+        <thead>
+            <tr>
+                <th>City</th>
+                <th>Temp (°C)</th>
+                <th>Humidity (%)</th>
+                <th>Condition</th>
+                <th>Search Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for city in top_cities %}
+                <tr>
+                    <td>{{ city.city }}</td>
+                    <td>{{ city.temperature }}</td>
+                    <td>{{ city.humidity }}</td>
+                    <td>{{ city.condition_text }}</td>
+                    <td>{{ city.search_count }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+
 </div>
 </div>
 {% endblock %}
