@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 import requests
 import mysql.connector
-import os
 
 app = Flask(__name__) 
 
@@ -236,8 +235,5 @@ def goa():
 def travelling():
     return render_template("joy_of_travelling.html")
 
-
-    
-  
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=5000)
