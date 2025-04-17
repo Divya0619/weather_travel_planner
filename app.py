@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 import requests
 import mysql.connector
-
+import os
 app = Flask(__name__) 
 
 API_KEY = "a9b49f91afa3434d90a93038251903" 
@@ -236,4 +236,5 @@ def travelling():
     return render_template("joy_of_travelling.html")
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
